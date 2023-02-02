@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Человек</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+<p th:text="${person.getId()}" style="font-family: Montserrat">ID</p>
+<p th:text="${person.getName()}" style="font-family: Montserrat">Name</p>
+<p th:text="${person.getAge()}" style="font-family: Montserrat">Name</p>
+<p th:text="${person.getEmail()}" style="font-family: Montserrat">Name</p>
+<p th:text="${person.getAddress()}" style="font-family: Montserrat">Name</p>
+
+<a th:href="@{/people/{id}/edit(id=${person.getId()})}">Edit</a>
+
+<form th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}">
+    <input type="submit" value="Delete"/>
+</form>
+</body>
+</html>
